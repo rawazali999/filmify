@@ -1,9 +1,12 @@
 import Link from 'next/link'
+import Navbar from './components/Navbar'
 
 export default function Home() {
   return (
-    <main> <div>Home</div>
-      <Link href={'/about'}> go to about</Link>
+    <>
+    <Navbar />
+    <main className=''>hello
     </main>
+    </>
   )
 }
