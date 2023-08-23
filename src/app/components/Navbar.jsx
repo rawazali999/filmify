@@ -19,7 +19,7 @@ export default function Navbar() {
         placeholder="Search..."
         className="input input-bordered  w-60 "
       />
-      <input type="checkbox" className="toggle" checked />
+      <input type="checkbox" className="toggle" />
     </nav>
   );
 }

@@ -3,4 +3,6 @@
 @tailwind utilities;
 
 
-/* Set font family for elements */
+main + div{
+    border: 12px solid red;
+}

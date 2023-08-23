@@ -16,21 +16,21 @@ export default async function MovieCard({ movie }) {
           src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
           alt="Movie poster"
         />
-        <div className="flex justify-between p-4">
+        <div className="flex justify-between px-2 py-4 ">
           <h5 className="text-inherit break-normal font-medium text text-neutral-800 dark:text-neutral-50 ">
             {/* make the title wrap after two words */}
-            {movie.title.length > 15
-              ? `${movie.title.substring(0, 15)}...`
+            {movie.title.length > 18
+              ? `${movie.title.substring(0, 18)}...`
               : movie.title}
           </h5>
 
-          <div className=" flex flex-col relative text-info justify-center items-center">
+          <div className="w-10 h-auto flex relative text-info justify-center items-center">
             <div className="z-20 text-sm font-bold flex items-start justify-center ">
               {movie.vote_average}
             </div>
             <FontAwesomeIcon
               icon={faStar}
-              className="z-10  w-10 h-10 absolute -right-2.5  text-white flex items-center justify-center"
+              className="z-10 w-10 h-10 absolute text-white flex items-center justify-center"
             />
           </div>
         </div>
