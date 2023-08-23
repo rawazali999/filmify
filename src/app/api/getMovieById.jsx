@@ -2,7 +2,6 @@ import axios from "axios";
 
 export default async function getMovieById(id) {
   const axios = require("axios");
-
   const options = {
     method: "GET",
     url: `https://api.themoviedb.org/3/find/${id}?external_source=imdb_id`,

@@ -19,27 +19,28 @@ const config: Config = {
     themes: [
       {
         mytheme: {
-          primary: "#33a5ce",
+          primary: "#3a51ff",
 
-          secondary: "#b4e285",
+          secondary: "#807af9",
 
-          accent: "#f2ce4b",
+          accent: "#ff6870",
 
-          neutral: "#2a233e",
+          neutral: "#26203c",
 
-          "base-100": "#efeef1",
+          "base-100": "#e9e8ee",
 
-          info: "#718cd6",
+          info: "#4077bf",
 
-          success: "#78dec5",
+          success: "#83e2a9",
 
-          warning: "#d3a50d",
+          warning: "#f2c854",
 
-          error: "#f6656c",
+          error: "#f42f53",
         },
       },
     ],
   },
   plugins: [require("daisyui")],
+  //...
 };
 export default config;

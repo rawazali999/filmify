@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <nav className="w-full flex justify-between items-center bg-primary px-6">
+    <nav className="w-full flex justify-between items-center bg-info  px-6">
       <div className="flex justify-center items-center p-2 text-3xl font-mono ">
         <Image
           src="/images/movie-logo.png"
