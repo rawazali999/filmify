@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
-
+import Link from "next/link";
 export default function Navbar() {
   return (
-    <nav className="w-full flex justify-between items-center bg-info  px-6">
-      <div className="flex justify-center items-center p-2 text-3xl font-mono ">
+    <nav className="w-full flex justify-between items-center bg-info px-2 md:px-6">
+      <div className="flex justify-center items-center py-2 md:p-2 text-lg md:text-3xl font-mono font-bold ">
         <Image
           src="/images/movie-logo.png"
           width={50}
@@ -17,9 +17,16 @@ export default function Navbar() {
       <input
         type="text"
         placeholder="Search..."
-        className="input input-bordered  w-60 "
+        className="input h-10 w-36 md:w-60 "
       />
-      <input type="checkbox" className="toggle" />
+      <div>
+        <Link
+          href={"Trending"}
+          className=" p-2 text-base-100 font-semibold rounded-md"
+        >
+          Trending
+        </Link>
+      </div>
     </nav>
   );
 }

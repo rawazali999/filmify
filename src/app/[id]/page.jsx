@@ -33,7 +33,7 @@ export default async function page({ params: { id } }) {
             <p className="text-gray-200 mt-4">
               Release Date: {movie.release_date} <br />
               Genre: {movie.genres.map((genre) => genre.name).join(", ")} <br />
-              Rating: {movie.vote_average} <br />
+              Rating: {movie.vote_average.toFixed(1)} <br />
               <br />
               Budget: {movie.budget.toLocaleString()} $ <br />
               {/* add comma between each three digit to the revenue */}
