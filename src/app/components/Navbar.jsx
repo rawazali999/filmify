@@ -4,7 +4,10 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <nav className="w-full flex justify-between items-center bg-info px-2 md:px-6">
-      <div className="flex justify-center items-center py-2 md:p-2 text-lg md:text-3xl font-mono font-bold ">
+      <Link
+        href={"/"}
+        className="flex justify-center items-center py-2 md:p-2 text-lg md:text-3xl font-mono font-bold "
+      >
         <Image
           src="/images/movie-logo.png"
           width={50}
@@ -12,7 +15,7 @@ export default function Navbar() {
           alt="Picture of the author"
         />
         Filmify
-      </div>
+      </Link>
 
       <input
         type="text"
@@ -22,9 +25,15 @@ export default function Navbar() {
       <div>
         <Link
           href={"Trending"}
-          className=" p-2 text-base-100 font-semibold rounded-md"
+          className=" p-2 text-base-100 font-semibold rounded-md underline"
         >
           Trending
+        </Link>
+        <Link
+          href={"NowPlaying"}
+          className=" p-2 text-base-100 font-semibold rounded-md underline"
+        >
+          Now Playing
         </Link>
       </div>
     </nav>
