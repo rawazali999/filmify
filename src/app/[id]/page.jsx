@@ -2,7 +2,13 @@ import React from "react";
 import getMoviesById from "../api/getMovieById";
 import Image from "next/image";
 
-;
+export async function generateMetadata({ params: { id } }) {
+  const movie = await getMoviesById(id);
+  return {
+    title: movie.title,
+    description: movie.overview,
+  };
+}
 
 export default async function page({ params: { id } }) {
   const movie = await getMoviesById(id);

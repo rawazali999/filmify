@@ -7,7 +7,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 export default function MovieCard({ movie }) {
   return (
     <Link href={`${movie.id}`}>
-      <div className="flex flex-col w-60 rounded-lg bg-info shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
+      <div className="flex flex-col w-60 rounded-lg bg-primary">
         <Image
           width={100}
           height={200}
@@ -23,14 +23,14 @@ export default function MovieCard({ movie }) {
               : (movie && movie.title) || "No Title"}
           </h5>
 
-          <div className="w-10 h-auto flex relative text-info justify-center items-center">
-            <div className="z-20 text-sm font-bold flex items-start justify-center ">
+          <div className="w-10 h-auto flex relative justify-center items-center">
+            <div className="z-20 p-1 text-sm font-bold flex items-start text-primary justify-center ">
               {/* show only one digit after dot */}
               {movie.vote_average.toFixed(1)}
             </div>
             <FontAwesomeIcon
               icon={faStar}
-              className="z-10 w-10 h-10 absolute text-white flex items-center justify-center"
+              className="z-10 w-11 h-11 absolute text-white flex items-center justify-center"
             />
           </div>
         </div>

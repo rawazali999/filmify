@@ -2,6 +2,13 @@ import React from "react";
 import getTrendingMovies from "../api/getTrendingMovies";
 import MovieCard from "../components/MovieCard";
 
+export async function generateMetadata() {
+  return {
+    title: "Trending Movies",
+    description: " movies that are trending now ",
+  };
+}
+
 export default async function page() {
   const movies = await getTrendingMovies();
   return (

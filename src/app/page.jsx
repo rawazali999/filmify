@@ -1,8 +1,14 @@
 import Hero from "./components/Hero";
 import "./globals.css";
-import RootLayout from "./layout";
 import PopularMovies from "./components/PopularMovies";
-import Navbar from "./components/Navbar";
+
+export async function generateMetadata() {
+  return {
+    title: "FILMIFY",
+    description:
+      "A place where you can find your favorite movies and tv shows information.",
+  };
+}
 
 export default function Home() {
   return (
