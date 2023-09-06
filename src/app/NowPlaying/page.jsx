@@ -1,12 +1,16 @@
 import React from "react";
 import getNowPlayingMovies from "../api/getNowPlayingMovies";
 import MovieCard from "../components/MovieCard";
+
+
 export async function generateMetadata() {
   return {
     title: "Now Playing in Theatre",
     description: "movies that are now playing in theatre",
   };
 }
+
+
 export default async function page() {
   const movies = await getNowPlayingMovies();
 

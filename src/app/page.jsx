@@ -1,6 +1,7 @@
 import Hero from "./components/Hero";
 import "./globals.css";
 import PopularMovies from "./components/PopularMovies";
+import PopularTvShows from "./components/PopularTvShows";
 
 export async function generateMetadata() {
   return {
@@ -18,6 +19,10 @@ export default function Home() {
         Most Popular Movies 2023
       </h1>
       <PopularMovies />
+      <h1 className="text-3xl text-center font-mono font-bold text-info my-4 drop-shadow-lg">
+        Most Popular Tv Shows 2023
+      </h1>
+      <PopularTvShows />
     </>
   );
 }
