@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import getTvShowById from "../../api/getTvShowbyId";
+import getTvShowById from "../../api/getTvShowById";
 
 export async function generateMetadata({ params: { tvShowId } }) {
   const tvShow = await getTvShowById(tvShowId);
