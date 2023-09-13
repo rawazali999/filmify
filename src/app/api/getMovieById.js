@@ -15,6 +15,6 @@ export default async function getMovieById(id) {
     return response.data;
   } catch (error) {
     console.error(error);
-    throw error; // You can choose to handle the error here or propagate it
+    return undefined;
   }
 }

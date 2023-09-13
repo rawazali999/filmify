@@ -7,11 +7,11 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 export default function MovieCard({ movie }) {
   return (
     <Link href={`${movie.id}`}>
-      <div className="flex flex-col w-60 rounded-lg bg-primary">
+      <div className="flex flex-col w-56  rounded-lg bg-primary">
         <Image
           width={100}
           height={200}
-          className="w-full rounded-t-lg object-cover h-auto"
+          className="w-full rounded-t-lg object-cover"
           src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
           alt="Movie poster"
         />

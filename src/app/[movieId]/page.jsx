@@ -2,17 +2,29 @@ import React from "react";
 import getMoviesById from "../api/getMovieById";
 import Image from "next/image";
 import Cast from "../components/Cast";
+import getPopularMovies from "../api/getPopularMovies";
+import NotFound from "../not-found";
 
 export async function generateMetadata({ params: { movieId } }) {
   const movie = await getMoviesById(movieId);
-  return {
-    title: movie.title,
-    description: movie.overview,
-  };
+  if (!movie) {
+    return {
+      title: "Movie Not Found",
+    };
+  } else {
+    return {
+      title: movie.title,
+      description: movie.overview,
+      image: `https://image.tmdb.org/t/p/original/${movie.poster_path}`,
+    };
+  }
 }
 
 export default async function page({ params: { movieId } }) {
   const movie = await getMoviesById(movieId);
+  if (!movie) {
+    return NotFound();
+  }
 
   return (
     <>
@@ -52,4 +64,12 @@ export default async function page({ params: { movieId } }) {
       </div>
     </>
   );
+}
+
+// next.js now will know that what will the params be wnd it will make the [movieId] static not server side
+export async function generateStaticParams() {
+  const movies = await getPopularMovies();
+  return movies.results.map((movie) => ({
+    movieId: movie.id.toString(),
+  }));
 }
