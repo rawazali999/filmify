@@ -15,11 +15,11 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <h1 className="text-3xl text-center font-mono font-bold text-info my-4 drop-shadow-lg">
+      <h1 className="text-2xl tracking-widest text-center font-mono font-bold text-base-100 my-8 ">
         Most Popular Movies 2023
       </h1>
       <PopularMovies />
-      <h1 className="text-3xl text-center font-mono font-bold text-info my-4 drop-shadow-lg">
+      <h1 className="text-2xl tracking-widest text-center font-mono font-bold text-base-100 my-8 ">
         Most Popular Tv Shows 2023
       </h1>
       <PopularTvShows />

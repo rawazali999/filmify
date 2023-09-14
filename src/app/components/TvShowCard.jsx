@@ -3,12 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { json } from "stream/consumers";
 
 export default async function TvShowCard({ TvShow }) {
   return (
     <Link href={`/TvShow/${TvShow.id}`}>
-      <div className="flex flex-col w-60 rounded-lg bg-primary">
+      <div className="flex flex-col w-56 h rounded-lg bg-primary border">
         <Image
           width={100}
           height={200}

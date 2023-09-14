@@ -7,7 +7,10 @@ export default async function Cast({ id }) {
   return (
     <div className="w-full">
       <h1 className="text-white text-2xl font-bold my-4">Cast</h1>
-      <div className="flex   overflow-x-auto space-x-10">
+      <div
+        id="scroll"
+        className="flex items-center overflow-x-auto shadow-inner p-4  space-x-10"
+      >
         {credits.cast.map((actor) => (
           <div width={300} height={300} key={actor.id}>
             <Image
@@ -17,10 +20,8 @@ export default async function Cast({ id }) {
               height={100}
               className="w-16 h-16 rounded-full shadow-md "
             />
-            <p className="text-white w-full text-sm text-center">
-              {actor.name}
-            </p>
-            <p className="text-gray-500 w-full text-xs text-center">
+            <p className="text-white text-sm text-center w-16">{actor.name}</p>
+            <p className="text-gray-500  text-xs text-center w-16">
               {actor.character}
             </p>
           </div>

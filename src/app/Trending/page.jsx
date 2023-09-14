@@ -14,7 +14,9 @@ export default async function page() {
   return (
     <>
       <div className="flex flex-col justify-center items-center ">
-        <h1 className="text-4xl font-semibold text-info">Trending Movies </h1>
+        <h1 className="text-2xl tracking-widest text-center font-mono font-bold text-base-100 my-8">
+          Trending Movies{" "}
+        </h1>
       </div>
       <div className="flex flex-wrap justify-center items-center space-x-2 space-y-2 p-2">
         {movies.results.map((movie) => (

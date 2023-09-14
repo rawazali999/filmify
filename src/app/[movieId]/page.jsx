@@ -1,12 +1,12 @@
 import React from "react";
-import getMoviesById from "../api/getMovieById";
+import getMovieById from "../api/getMovieById";
 import Image from "next/image";
 import Cast from "../components/Cast";
 import getPopularMovies from "../api/getPopularMovies";
 import NotFound from "../not-found";
 
 export async function generateMetadata({ params: { movieId } }) {
-  const movie = await getMoviesById(movieId);
+  const movie = await getMovieById(movieId);
   if (!movie) {
     return {
       title: "Movie Not Found",
@@ -21,7 +21,7 @@ export async function generateMetadata({ params: { movieId } }) {
 }
 
 export default async function page({ params: { movieId } }) {
-  const movie = await getMoviesById(movieId);
+  const movie = await getMovieById(movieId);
   if (!movie) {
     return NotFound();
   }

@@ -2,7 +2,6 @@ import React from "react";
 import getNowPlayingMovies from "../api/getNowPlayingMovies";
 import MovieCard from "../components/MovieCard";
 
-
 export async function generateMetadata() {
   return {
     title: "Now Playing in Theatre",
@@ -10,14 +9,13 @@ export async function generateMetadata() {
   };
 }
 
-
 export default async function page() {
   const movies = await getNowPlayingMovies();
 
   return (
     <>
       <div className="flex flex-col justify-center items-center ">
-        <h1 className="text-4xl font-semibold text-info">
+        <h1 className="text-2xl tracking-widest text-center font-mono font-bold text-base-100 my-8 ">
           {" "}
           Now Playing in Theatre{" "}
         </h1>

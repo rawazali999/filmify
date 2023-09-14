@@ -6,7 +6,7 @@ export default function Navbar() {
     <nav className="w-full flex justify-between items-center bg-primary p-2 md:px-6">
       <Link
         href={"/"}
-        className="flex justify-center items-center text-white py-2 md:p-2 text-lg md:text-3xl font-mono font-bold "
+        className="flex justify-center items-center text-white py-2 md:p-2 text-lg md:text-3xl font-sans font-semibold tracking-wider "
       >
         {/* <Image
           src="/images/movie-logo.png"
