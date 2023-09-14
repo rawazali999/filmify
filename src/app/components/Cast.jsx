@@ -1,9 +1,9 @@
 import React from "react";
-import getMovieCastById from "../api/getMovieCastById";
 import Image from "next/image";
+import getMovieCast from "../api/getMovieCast";
 
 export default async function Cast({ id }) {
-  const credits = await getMovieCastById(id);
+  const credits = await getMovieCast(id);
   return (
     <div className="w-full">
       <h1 className="text-white text-2xl font-bold my-4">Cast</h1>

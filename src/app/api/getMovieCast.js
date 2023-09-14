@@ -1,6 +1,5 @@
-export default async function getMovieCastById(id) {
+export default async function getMovieCast(id) {
   const axios = require("axios");
-
   const options = {
     method: "GET",
     url: `https://api.themoviedb.org/3/movie/${id}/credits?language=en-US`,
