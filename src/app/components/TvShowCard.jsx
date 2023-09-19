@@ -4,10 +4,10 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
-export default async function TvShowCard({ TvShow }) {
+export default function TvShowCard({ TvShow }) {
   return (
     <Link href={`/TvShow/${TvShow.id}`}>
-      <div className="flex flex-col w-56 h rounded-lg bg-primary border">
+      <div className="flex flex-col w-40 sm:w-48 md:w-56 lg:w-60  rounded-lg bg-primary border">
         <Image
           width={100}
           height={200}

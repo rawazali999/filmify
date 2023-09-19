@@ -37,6 +37,12 @@ export default function Footer() {
               >
                 Now Playing
               </Link>
+              <Link
+                className="text-base-100 transition hover:text-base-100/75"
+                href="/TopRatedMovies"
+              >
+                Top Rated Movies
+              </Link>
             </li>
           </ul>
         </div>

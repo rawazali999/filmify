@@ -1,9 +1,9 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
+import Search from "./Search";
 export default function Navbar() {
   return (
-    <nav className="w-full flex justify-between items-center bg-primary p-2 md:px-6">
+    <nav className="w-full flex justify-between items-center relative z-10 bg-primary p-2 md:px-6">
       <Link
         href={"/"}
         className="flex justify-center items-center text-white py-2 md:p-2 text-lg md:text-3xl font-sans font-semibold tracking-wider "
@@ -16,12 +16,7 @@ export default function Navbar() {
         /> */}
         Filmify
       </Link>
-
-      <input
-        type="text"
-        placeholder="Search..."
-        className="input h-10 w-36 md:w-60 "
-      />
+      <Search />
       <div className="dropdown dropdown-end md:hidden">
         <label tabIndex={0} className="btn btn-outline text-white">
           Menu
@@ -32,34 +27,48 @@ export default function Navbar() {
         >
           <li>
             <Link
-              href={"Trending"}
-              className=" p-2 text-primary font-semibold rounded-md underline"
+              href={"/Trending"}
+              className=" p-2 text-primary text-sm font-semibold rounded-md underline"
             >
               Trending
             </Link>
           </li>
           <li>
             <Link
-              href={"NowPlaying"}
-              className=" p-2 text-primary font-semibold rounded-md underline"
+              href={"/NowPlaying"}
+              className=" p-2 text-primary text-sm font-semibold rounded-md underline"
             >
               Now Playing
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={"/TopRatedMovies"}
+              className=" p-2 text-primary text-sm font-semibold rounded-md underline"
+            >
+              Top Rated Movies
             </Link>
           </li>
         </ul>
       </div>
       <div className=" hidden md:block">
         <Link
-          href={"Trending"}
-          className=" p-2 text-base-100 font-semibold rounded-md underline"
+          href={"/Trending"}
+          className="text-sm p-2 text-base-100 font-semibold rounded-md underline"
         >
           Trending
         </Link>
         <Link
-          href={"NowPlaying"}
-          className=" p-2 text-base-100 font-semibold rounded-md underline"
+          href={"/NowPlaying"}
+          className="text-sm p-2 text-base-100 font-semibold rounded-md underline"
         >
           Now Playing
+        </Link>
+        <Link
+          href={"/TopRatedMovies"}
+          className="text-sm p-2 text-base-100 font-semibold rounded-md underline"
+        >
+          Top Rated Movies
         </Link>
       </div>
     </nav>
