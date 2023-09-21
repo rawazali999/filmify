@@ -1,9 +1,10 @@
 import React from "react";
-import getMovieById from "../api/getMovieById";
+import getMovieById from "../api/getById";
+import getPopularMovies from "../api/getPopular";
 import Image from "next/image";
 import Cast from "../components/Cast";
-import getPopularMovies from "../api/getPopularMovies";
 import NotFound from "../not-found";
+import { getMovieTrailer } from "../api/getById";
 
 export async function generateMetadata({ params: { movieId } }) {
   const movie = await getMovieById(movieId);
@@ -22,6 +23,11 @@ export async function generateMetadata({ params: { movieId } }) {
 
 export default async function page({ params: { movieId } }) {
   const movie = await getMovieById(movieId);
+  const videos = await getMovieTrailer(movieId);
+
+  const trailer = await videos.results.filter(function (item) {
+    return item.type === "Trailer";
+  });
   if (!movie) {
     return NotFound();
   }
@@ -59,6 +65,14 @@ export default async function page({ params: { movieId } }) {
               Revenue: {movie.revenue.toLocaleString()} $ <br />
             </p>
             <Cast id={movieId} />
+            <iframe
+              src={`https://www.youtube.com/embed/${trailer[1].key}`}
+              width="500"
+              height="500"
+              type="video/mp4"
+              controls
+              className="mx-auto w-full h-full md:h-[500px] my-6"
+            ></iframe>
           </div>
         </div>
       </div>

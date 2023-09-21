@@ -1,5 +1,5 @@
 import React from "react";
-import getNowPlayingMovies from "../api/getNowPlayingMovies";
+import getNowPlayingMovies from "../api/getNowPlaying";
 import MovieCard from "../components/MovieCard";
 
 export async function generateMetadata() {
