@@ -24,10 +24,14 @@ export async function generateMetadata({ params: { movieId } }) {
 export default async function page({ params: { movieId } }) {
   const movie = await getMovieById(movieId);
   const videos = await getMovieTrailer(movieId);
+  // make sure that the trailer is not empty and if it is empty then add a default trailer
+  let trailer;
+  if (videos.results.length === 0) {
+    trailer = [{ key: "dQw4w9WgXcQ" }];
+  } else {
+    trailer = videos.results.filter((video) => video.type === "Trailer");
+  }
 
-  const trailer = await videos.results.filter(function (item) {
-    return item.type === "Trailer";
-  });
   if (!movie) {
     return NotFound();
   }
@@ -66,7 +70,7 @@ export default async function page({ params: { movieId } }) {
             </p>
             <Cast id={movieId} />
             <iframe
-              src={`https://www.youtube.com/embed/${trailer[1].key}`}
+              src={`https://www.youtube.com/embed/${trailer[0].key}`}
               width="500"
               height="500"
               type="video/mp4"
