@@ -36,5 +36,6 @@ export default function TvShowCard({ TvShow }) {
         </div>
       </div>
     </Link>
+    
   );
 }

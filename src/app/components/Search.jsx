@@ -22,7 +22,7 @@ export default function Search() {
     setResults({});
   };
   return (
-    <div className="relative ">
+    <section id="search" className="relative">
       <div className="relative flex justify-between items-center">
         <input
           type="text"
@@ -40,6 +40,6 @@ export default function Search() {
       </div>
 
       <SearchResults results={results.results} />
-    </div>
+    </section>
   );
 }

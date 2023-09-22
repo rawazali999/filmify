@@ -6,10 +6,13 @@ export default async function PopularTvShows() {
   const TvShows = await getPopularTvShows();
 
   return (
-    <div className="flex flex-wrap justify-center items-center space-x-2 space-y-2 p-2">
+    <section
+      id="popular-tv-shows"
+      className="flex flex-wrap justify-center items-center space-x-2 space-y-2 p-2"
+    >
       {TvShows.results.map((TvShow) => (
         <TvShowCard key={TvShow.id} TvShow={TvShow} />
       ))}
-    </div>
+    </section>
   );
 }

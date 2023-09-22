@@ -5,7 +5,7 @@ import PopularTvShows from "./components/PopularTvShows";
 
 export async function generateMetadata() {
   return {
-    title: "FILMIFY",
+    title: "Filmify",
     description:
       "A place where you can find your favorite movies and tv shows information.",
   };

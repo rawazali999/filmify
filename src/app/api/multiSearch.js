@@ -1,6 +1,5 @@
 export default async function multiSearch(query) {
   const axios = require("axios");
-
   const options = {
     method: "GET",
     url: `https://api.themoviedb.org/3/search/multi?query=${query}&include_adult=false&language=en-US&page=1`,

@@ -1,10 +1,10 @@
 import React from "react";
-import getMovieById from "../api/getById";
-import getPopularMovies from "../api/getPopular";
+import getMovieById from "../../api/getById";
+import getPopularMovies from "../../api/getPopular";
 import Image from "next/image";
-import Cast from "../components/Cast";
-import NotFound from "../not-found";
-import { getMovieTrailer } from "../api/getById";
+import Cast from "../../components/Cast";
+import NotFound from "../../not-found";
+import { getMovieTrailer } from "../../api/getById";
 
 export async function generateMetadata({ params: { movieId } }) {
   const movie = await getMovieById(movieId);
@@ -38,14 +38,15 @@ export default async function page({ params: { movieId } }) {
 
   return (
     <>
-      <div
+      <section
+        id="movie-page"
         className=" w-full h-full bg-cover"
         style={{
           backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`,
         }}
       >
         <div className="flex flex-col sm:flex-row w-full backdrop-blur-lg h-full pt-4 ">
-          <div className="w-full sm:w-1/2 md:w-1/3 px-4 mb-8">
+          <div className="w-full sm:w-1/2 lg:1/3 px-4 mb-8">
             <Image
               src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
               width={200}
@@ -54,9 +55,9 @@ export default async function page({ params: { movieId } }) {
               className="rounded-lg shadow-md w-full h-auto"
             />
           </div>
-          <div className="shadow w-full sm:w-1/2 md:w-2/3 lg:w-3/4  px-4">
+          <div className="shadow w-full sm:w-1/2 lg:w-2/3   px-4">
             <a href={movie.homepage} className="text-2xl font-bold text-white ">
-              {movie.title}
+              {movie.title || movie.name}
             </a>
             <p className="text-gray-200 mt-4 ">{movie.overview}</p>
             <p className="text-gray-200 mt-4">
@@ -75,11 +76,11 @@ export default async function page({ params: { movieId } }) {
               height="500"
               type="video/mp4"
               controls
-              className="mx-auto w-full h-full md:h-[500px] my-6"
+              className="mx-auto w-full h-56 md:h-[500px] my-6 rounded-lg shadow-md"
             ></iframe>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }

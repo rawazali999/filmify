@@ -4,9 +4,9 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
-export default function MovieCard({ movie }) {
+export default function Card({ movie }) {
   return (
-    <Link href={`${movie.id}`}>
+    <Link href={`/movie/${movie.id}`}>
       <div className="flex flex-col w-40 sm:w-48 md:w-56 lg:w-60 rounded-lg bg-primary border ">
         <Image
           width={100}

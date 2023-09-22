@@ -2,7 +2,8 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <div
+    <section
+      id="hero"
       className="hero min-h-fit bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage:
@@ -21,6 +22,6 @@ export default function Hero() {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

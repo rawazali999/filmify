@@ -17,7 +17,7 @@ export default function Footer() {
                 href="/"
                 className="text-base-100 transition hover:text-base-100/75"
               >
-                Home
+                Most Popular
               </Link>
             </li>
 

@@ -36,7 +36,7 @@ export default async function page({ params: { tvShowId } }) {
               href={tvShow.homepage}
               className="text-2xl font-bold text-white "
             >
-              {tvShow.title}
+              {tvShow.title || tvShow.name}
             </a>
             <p className="text-gray-200 mt-4 ">{tvShow.overview}</p>
             <p className="text-gray-200 mt-4">
