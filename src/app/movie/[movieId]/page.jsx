@@ -2,7 +2,7 @@ import React from "react";
 import getMovieById from "../../api/getById";
 import getPopularMovies from "../../api/getPopular";
 import Image from "next/image";
-import Cast from "../../components/Cast";
+import Cast from "../../components/Movie/MovieCast";
 import NotFound from "../../not-found";
 import { getMovieTrailer } from "../../api/getById";
 

@@ -1,7 +1,7 @@
 import Hero from "./components/Hero";
 import "./globals.css";
-import PopularMovies from "./components/PopularMovies";
-import PopularTvShows from "./components/PopularTvShows";
+import PopularMovies from "./components/Movie/PopularMovies";
+import PopularTvShows from "./components/TvShow/PopularTvShows";
 
 export async function generateMetadata() {
   return {

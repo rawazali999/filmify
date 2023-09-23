@@ -13,14 +13,14 @@ export default function Card({ movie }) {
           height={200}
           className="w-full rounded-t-lg object-cover"
           src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-          alt="Movie poster"
+          alt="movie poster"
         />
         <div className="flex justify-between px-2 py-4 ">
           <h5 className="text-inherit break-normal font-medium text text-neutral-800 dark:text-neutral-50 ">
             {/* insure that the object and the title is received to avoid "TypeError: Cannot read properties of undefined (reading 'length')" */}
             {movie && movie.title && movie.title.length > 18
               ? `${movie.title.substring(0, 18)}...`
-              : (movie && movie.title) || "No Title"}
+              : movie && movie.title}
           </h5>
 
           <div className="w-10 h-auto flex relative justify-center items-center">

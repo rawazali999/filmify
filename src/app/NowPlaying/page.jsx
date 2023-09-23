@@ -1,7 +1,6 @@
 import React from "react";
 import getNowPlayingMovies from "../api/getNowPlaying";
-import Card from "../components/Card";
-
+import MovieCard from "../components/Movie/MovieCard";
 export async function generateMetadata() {
   return {
     title: "Now Playing in Theatre",
@@ -20,7 +19,7 @@ export default async function page() {
 
       <div className="flex flex-wrap justify-center items-center space-x-2 space-y-2 p-2">
         {movies.results.map((movie) => (
-          <Card key={movie.id} movie={movie} />
+          <MovieCard key={movie.id} movie={movie} />
         ))}
       </div>
     </section>

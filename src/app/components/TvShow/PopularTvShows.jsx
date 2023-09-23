@@ -1,5 +1,5 @@
 import React from "react";
-import { getPopularTvShows } from "../api/getPopular";
+import { getPopularTvShows } from "../../api/getPopular";
 import TvShowCard from "./TvShowCard";
 
 export default async function PopularTvShows() {

@@ -1,6 +1,7 @@
 import React from "react";
 import getTrendingMovies, { getTrendingTvShows } from "../api/getTrending";
-import Card from "../components/Card";
+import Card from "../components/Movie/MovieCard";
+import TvShowCard from "../components/TvShow/TvShowCard";
 
 export async function generateMetadata() {
   return {
@@ -13,7 +14,7 @@ export default async function page() {
   const movies = await getTrendingMovies();
   const TvShows = await getTrendingTvShows();
   return (
-    <section id="trending-movies">
+    <section id="trending">
       <h1 className="text-2xl tracking-widest text-center font-mono font-bold text-base-100 py-8 ">
         Trending Movies{" "}
       </h1>
@@ -28,7 +29,7 @@ export default async function page() {
       </h1>
       <div className="flex flex-wrap justify-center items-center space-x-2 space-y-2 p-2">
         {TvShows.results.map((TvShow) => (
-          <Card key={TvShow.id} movie={TvShow} />
+          <TvShowCard key={TvShow.id} TvShow={TvShow} />
         ))}
       </div>
     </section>

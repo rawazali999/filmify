@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useState } from "react";
-import multiSearch from "../api/multiSearch";
+import multiSearch from "../../api/multiSearch";
 import SearchResults from "./SearchResults";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";

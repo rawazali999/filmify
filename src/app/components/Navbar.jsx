@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Search from "./Search";
+import Search from "./Search/Search";
 export default function Navbar() {
   return (
     <nav className="w-full flex justify-between items-center sticky top-0 z-30 bg-primary p-2 md:px-6">
@@ -46,7 +46,7 @@ export default function Navbar() {
               href={"/TopRated"}
               className=" p-2 text-primary text-sm font-semibold rounded-md underline"
             >
-              Top Rated 
+              Top Rated
             </Link>
           </li>
         </ul>
@@ -68,7 +68,7 @@ export default function Navbar() {
           href={"/TopRated"}
           className="text-sm p-2 text-base-100 font-semibold rounded-md underline"
         >
-          Top Rated 
+          Top Rated
         </Link>
       </div>
     </nav>

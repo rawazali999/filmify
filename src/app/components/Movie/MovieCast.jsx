@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { getMovieCast } from "../api/getById";
+import { getMovieCast } from "../../api/getById";
 
 export default async function Cast({ id }) {
   const credits = await getMovieCast(id);
