@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { getTvShowById, getTvShowTrailer } from "../../api/getById";
 import { TvShowCast } from "../../components/TvShow/TvShowCast";
+import Images from "../../components/Images";
 
 export async function generateMetadata({ params: { tvShowId } }) {
   const tvShow = await getTvShowById(tvShowId);
@@ -63,6 +64,8 @@ export default async function page({ params: { tvShowId } }) {
               <br />
             </p>
             <TvShowCast id={tvShow.id} />
+            <Images id={tvShow.id} type="TvShow" />
+
             <iframe
               src={`https://www.youtube.com/embed/${
                 trailer[0].key || trailer[1].key

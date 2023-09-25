@@ -7,7 +7,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 export default function MovieCard({ movie }) {
   return (
     <Link href={`/movie/${movie.id}`}>
-      <div className="flex flex-col w-40 sm:w-48 md:w-56 lg:w-60 rounded-lg bg-primary border ">
+      <div className="flex flex-col w-40 sm:w-48 md:w-56 lg:w-60 rounded-lg bg-primary border-2 ">
         <Image
           width={100}
           height={200}

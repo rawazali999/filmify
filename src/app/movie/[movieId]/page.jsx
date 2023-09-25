@@ -1,10 +1,11 @@
 import React from "react";
 import getMovieById from "../../api/getById";
-import getPopularMovies from "../../api/getPopular";
+// import getPopularMovies from "../../api/getPopular";
 import Image from "next/image";
-import Cast from "../../components/Movie/MovieCast";
 import NotFound from "../../not-found";
 import { getMovieTrailer } from "../../api/getById";
+import MovieCast from "../../components/Movie/MovieCast";
+import Images from "../../components/Images";
 
 export async function generateMetadata({ params: { movieId } }) {
   const movie = await getMovieById(movieId);
@@ -40,12 +41,12 @@ export default async function page({ params: { movieId } }) {
     <>
       <section
         id="movie-page"
-        className=" w-full h-full bg-cover"
+        className=" w-full h-full bg-cover bg-center"
         style={{
           backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`,
         }}
       >
-        <div className="flex flex-col sm:flex-row w-full backdrop-blur-lg h-full pt-4 ">
+        <div className="flex flex-col sm:flex-row w-full bg-neutral/80  h-full pt-4 ">
           <div className="w-full sm:w-1/2 lg:1/3 px-4 mb-8">
             <Image
               src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
@@ -55,21 +56,23 @@ export default async function page({ params: { movieId } }) {
               className="rounded-lg shadow-md w-full h-auto"
             />
           </div>
-          <div className="shadow w-full sm:w-1/2 lg:w-2/3   px-4">
+          <div className="w-full sm:w-1/2 lg:w-2/3   px-4">
             <a href={movie.homepage} className="text-2xl font-bold text-white ">
               {movie.title || movie.name}
             </a>
-            <p className="text-gray-200 mt-4 ">{movie.overview}</p>
-            <p className="text-gray-200 mt-4">
+            <p className="text-gray-100 mt-4 ">{movie.overview}</p>
+            <p className="text-gray-100 mt-4">
               Release Date: {movie.release_date} <br />
-              {/* Genre: {movie.genres.map((genre) => genre.name).join(", ")} <br /> */}
+              Genres: {movie.genres.map((genre) => genre.name).join(", ")}{" "}
+              <br />
               Rating: {movie.vote_average.toFixed(1)} <br />
               <br />
               Budget: {movie.budget.toLocaleString()} $ <br />
               {/* add comma between each three digit to the revenue */}
               Revenue: {movie.revenue.toLocaleString()} $ <br />
             </p>
-            <Cast id={movieId} />
+            <MovieCast id={movieId} />
+            <Images id={movieId} type="movie" />
             <iframe
               src={`https://www.youtube.com/embed/${
                 trailer[0].key || trailer[1].key
