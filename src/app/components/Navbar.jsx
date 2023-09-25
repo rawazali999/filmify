@@ -18,7 +18,7 @@ export default function Navbar() {
       </Link>
       <Search />
       <div className="dropdown dropdown-end md:hidden">
-        <label tabIndex={0} className="btn btn-outline btn-sm text-white">
+        <label tabIndex={0} className="btn btn-outline  text-white">
           Menu
         </label>
         <ul

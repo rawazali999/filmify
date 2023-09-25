@@ -1,10 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import {
-  getTvShowById,
-  getTvShowCast,
-  getTvShowTrailer,
-} from "../../api/getById";
+import { getTvShowById, getTvShowTrailer } from "../../api/getById";
 import { TvShowCast } from "../../components/TvShow/TvShowCast";
 
 export async function generateMetadata({ params: { tvShowId } }) {
@@ -17,8 +13,8 @@ export async function generateMetadata({ params: { tvShowId } }) {
 
 export default async function page({ params: { tvShowId } }) {
   const tvShow = await getTvShowById(tvShowId);
-  console.log(tvShow);
   const videos = await getTvShowTrailer(tvShowId);
+
   let trailer;
   if (videos.results.length === 0) {
     trailer = [{ key: "dQw4w9WgXcQ" }];
@@ -54,7 +50,7 @@ export default async function page({ params: { tvShowId } }) {
             </a>
             <p className="text-gray-200 mt-4 ">{tvShow.overview}</p>
             <p className="text-gray-200 mt-4">
-              Rating : {tvShow.vote_average} <br />
+              Rating : {tvShow.vote_average.toFixed(1)} <br />
               Number of seasons : {tvShow.number_of_seasons} <br />
               Number of episodes : {tvShow.number_of_episodes} <br />
               <br />
@@ -68,7 +64,9 @@ export default async function page({ params: { tvShowId } }) {
             </p>
             <TvShowCast id={tvShow.id} />
             <iframe
-              src={`https://www.youtube.com/embed/${trailer[0].key}`}
+              src={`https://www.youtube.com/embed/${
+                trailer[0].key || trailer[1].key
+              }`}
               width="500"
               height="500"
               type="video/mp4"

@@ -1,7 +1,7 @@
 import React from "react";
 import getTrendingMovies, { getTrendingTvShows } from "../api/getTrending";
-import Card from "../components/Movie/MovieCard";
 import TvShowCard from "../components/TvShow/TvShowCard";
+import MovieCard from "../components/Movie/MovieCard";
 
 export async function generateMetadata() {
   return {
@@ -20,7 +20,7 @@ export default async function page() {
       </h1>
       <div className="flex flex-wrap justify-center items-center space-x-2 space-y-2 p-2">
         {movies.results.map((movie) => (
-          <Card key={movie.id} movie={movie} />
+          <MovieCard key={movie.id} movie={movie} />
         ))}
       </div>
 

@@ -9,7 +9,7 @@ export default function SearchResults({ results }) {
         className="flex flex-col  w-36 md:w-60 absolute rounded-md overflow-y-scroll h-96 z-20  top-10"
       >
         {results.map((movieOrTvShow) =>
-          movieOrTvShow.media_type === "movie" ? (
+          movieOrTvShow.media_type == "movie" ? (
             <SearchCard
               key={movieOrTvShow.id}
               type={"movie"}

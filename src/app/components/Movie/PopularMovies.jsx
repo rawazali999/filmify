@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./MovieCard";
+import MovieCard from "./MovieCard";
 import getPopularMovies from "../../api/getPopular";
 
 export default async function PopularMovies() {
@@ -10,7 +10,7 @@ export default async function PopularMovies() {
       className="flex flex-wrap justify-center items-center space-x-2 space-y-2 p-2"
     >
       {movies.results.map((movie) => (
-        <Card key={movie.id} movie={movie} />
+        <MovieCard key={movie.id} movie={movie} />
       ))}
     </section>
   );

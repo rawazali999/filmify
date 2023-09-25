@@ -71,7 +71,7 @@ export default async function page({ params: { movieId } }) {
             </p>
             <Cast id={movieId} />
             <iframe
-              src={`https://www.youtube.com/embed/${trailer[0].key}`}
+              src={`https://www.youtube.com/embed/${trailer[0].key || trailer[1].key}`}
               width="500"
               height="500"
               type="video/mp4"
