@@ -71,7 +71,9 @@ export default async function page({ params: { movieId } }) {
             </p>
             <Cast id={movieId} />
             <iframe
-              src={`https://www.youtube.com/embed/${trailer[0].key || trailer[1].key}`}
+              src={`https://www.youtube.com/embed/${
+                trailer[0].key || trailer[1].key
+              }`}
               width="500"
               height="500"
               type="video/mp4"
@@ -85,10 +87,13 @@ export default async function page({ params: { movieId } }) {
   );
 }
 
-// next.js now will know that what will the params be wnd it will make the [movieId] static not server side
-export async function generateStaticParams() {
-  const movies = await getPopularMovies();
-  return movies.results.map((movie) => ({
-    movieId: movie.id.toString(),
-  }));
-}
+// next.js now make that the routes of the popular movies are generated at build time,
+//  make them static not server side if this code enabled, but it will cause error of routes of movies
+//  that come from search it wont recognize them them and that make server error
+
+// export async function generateStaticParams() {
+//   const movies = await getPopularMovies();
+//   return movies.results.map((movie) => ({
+//     movieId: movie.id.toString(),
+//   }));
+// }
