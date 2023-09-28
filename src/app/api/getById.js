@@ -79,6 +79,27 @@ export async function getMovieImages(id) {
   }
 }
 
+export async function getSimilarMovies(id) {
+  const axios = require("axios");
+
+  const options = {
+    method: "GET",
+    url: `https://api.themoviedb.org/3/movie/${id}/similar?language=en-US&page=1`,
+    headers: {
+      accept: "application/json",
+      Authorization: process.env.API_KEY,
+    },
+  };
+
+  try {
+    const response = await axios.request(options);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error; // You can choose to handle the error here or propagate it
+  }
+}
+
 export async function getTvShowImages(id) {
   const axios = require("axios");
 
@@ -146,6 +167,27 @@ export async function getTvShowTrailer(id) {
   const options = {
     method: "GET",
     url: `https://api.themoviedb.org/3/tv/${id}/videos?language=en-US`,
+    headers: {
+      accept: "application/json",
+      Authorization: process.env.API_KEY,
+    },
+  };
+
+  try {
+    const response = await axios.request(options);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error; // You can choose to handle the error here or propagate it
+  }
+}
+
+export async function getSimilarTvShows(id) {
+  const axios = require("axios");
+
+  const options = {
+    method: "GET",
+    url: `https://api.themoviedb.org/3/tv/${id}/similar?language=en-US&page=1`,
     headers: {
       accept: "application/json",
       Authorization: process.env.API_KEY,

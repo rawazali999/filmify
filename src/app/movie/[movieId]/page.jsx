@@ -6,6 +6,7 @@ import NotFound from "../../not-found";
 import { getMovieTrailer } from "../../api/getById";
 import MovieCast from "../../components/Movie/MovieCast";
 import Images from "../../components/Images";
+import SimilarMovies from "../../components/Movie/SimilarMovies";
 
 export async function generateMetadata({ params: { movieId } }) {
   const movie = await getMovieById(movieId);
@@ -41,12 +42,12 @@ export default async function page({ params: { movieId } }) {
     <>
       <section
         id="movie-page"
-        className=" w-full h-full bg-cover bg-center"
+        className=" w-full h-full bg-cover bg-center bg-neutral/80"
         style={{
           backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`,
         }}
       >
-        <div className="flex flex-col sm:flex-row w-full bg-neutral/80  h-full pt-4 ">
+        <div className="flex flex-col sm:flex-row w-full bg-inherit  h-full pt-4 ">
           <div className="w-full sm:w-1/2 lg:1/3 px-4 mb-8">
             <Image
               src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
@@ -73,6 +74,7 @@ export default async function page({ params: { movieId } }) {
             </p>
             <MovieCast id={movieId} />
             <Images id={movieId} type="movie" />
+            <h2 className="text-white text-xl font-bold my-4">Trailer</h2>
             <iframe
               src={`https://www.youtube.com/embed/${
                 trailer[0].key || trailer[1].key
@@ -85,6 +87,7 @@ export default async function page({ params: { movieId } }) {
             ></iframe>
           </div>
         </div>
+        <SimilarMovies id={movie.id} />
       </section>
     </>
   );

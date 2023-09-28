@@ -14,7 +14,7 @@ export default function TvShowCard({ TvShow }) {
             height={200}
             className="w-full rounded-t-lg object-cover h-auto"
             src={`https://image.tmdb.org/t/p/original/${TvShow.poster_path}`}
-            alt="TvShow poster"
+            alt={`${TvShow.name} poster`}
           />
           <div className="flex justify-between px-2 py-4 ">
             <h5 className="text-inherit break-normal font-medium text-xs sm:text-sm md:text-md text-neutral-800 dark:text-neutral-50 ">

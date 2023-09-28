@@ -2,6 +2,11 @@ import React from "react";
 import Link from "next/link";
 import Search from "./Search/Search";
 export default function Navbar() {
+  const navigation = [
+    { name: "Trending", href: "/Trending" },
+    { name: "Now Playing", href: "/NowPlaying" },
+    { name: "Top Rated", href: "/TopRated" },
+  ];
   return (
     <nav className="w-full flex justify-between items-center sticky top-0 z-30 bg-primary p-2 md:px-6">
       <Link
@@ -25,51 +30,31 @@ export default function Navbar() {
           tabIndex={0}
           className="dropdown-content z-[1] menu  bg-base-100 rounded-box w-32"
         >
-          <li>
-            <Link
-              href={"/Trending"}
-              className=" p-2 text-primary text-sm font-semibold rounded-md underline"
-            >
-              Trending
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={"/NowPlaying"}
-              className=" p-2 text-primary text-sm font-semibold rounded-md underline"
-            >
-              Now Playing
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={"/TopRated"}
-              className=" p-2 text-primary text-sm font-semibold rounded-md underline"
-            >
-              Top Rated
-            </Link>
-          </li>
+          {navigation.map((item) => (
+            <li key={item.name}>
+              <Link
+                href={item.href}
+                className="p-2 text-primary text-sm font-semibold rounded-md underline"
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
       <div className=" hidden md:block">
-        <Link
-          href={"/Trending"}
-          className="text-sm p-2 text-base-100 font-semibold rounded-md underline"
-        >
-          Trending
-        </Link>
-        <Link
-          href={"/NowPlaying"}
-          className="text-sm p-2 text-base-100 font-semibold rounded-md underline"
-        >
-          Now Playing
-        </Link>
-        <Link
-          href={"/TopRated"}
-          className="text-sm p-2 text-base-100 font-semibold rounded-md underline"
-        >
-          Top Rated
-        </Link>
+        <ul className="flex">
+          {navigation.map((item) => (
+            <li key={item.name}>
+              <Link
+                href={item.href}
+                className=" p-2 text-base-100 text-sm font-semibold rounded-md underline"
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   );

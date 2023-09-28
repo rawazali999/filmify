@@ -3,6 +3,13 @@ import React from "react";
 import Link from "next/link";
 
 export default function Footer() {
+  const navigation = [
+    { name: "Most Popular", href: "/" },
+    { name: "Trending", href: "/Trending" },
+    { name: "Now Playing", href: "/NowPlaying" },
+    { name: "Top Rated", href: "/TopRated" },
+  ];
+
   return (
     <footer className="bg-primary">
       <div className="relative mx-auto max-w-screen-xl px-4 py-10 sm:px-6 lg:px-8">
@@ -12,40 +19,14 @@ export default function Footer() {
           </div>
 
           <ul className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12">
-            <li>
-              <Link
-                href="/"
-                className="text-base-100 transition hover:text-base-100/75"
+            {navigation.map((item) => (
+              <li
+                key={item.name}
+                className="text-base-100 transition hover:text-base-100/75 underline"
               >
-                Most Popular
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                className="text-base-100 transition hover:text-base-100/75"
-                href="/Trending"
-              >
-                Trending
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                className="text-base-100 transition hover:text-base-100/75"
-                href="/NowPlaying"
-              >
-                Now Playing
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="text-base-100 transition hover:text-base-100/75"
-                href="/TopRated"
-              >
-                Top Rated
-              </Link>
-            </li>
+                <Link href={item.href}>{item.name}</Link>
+              </li>
+            ))}
           </ul>
         </div>
 

@@ -12,10 +12,10 @@ export default async function Images({ id, type }) {
 
   return (
     <>
-      <h1 className="text-white text-xl font-bold my-4">Images</h1>
+      <h2 className="text-white text-xl font-bold my-4">Images</h2>
       <div
         id="scroll"
-        className="w-full h-96 grid grid-cols-2 overflow-scroll p-4 rounded-md shadow-inner"
+        className="w-full h-96 grid grid-cols-2 overflow-scroll p-4 rounded-md  shadow-2xl bg-white"
       >
         {images.backdrops.map((image) => (
           <div key={image.id}>

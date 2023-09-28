@@ -9,20 +9,23 @@ export default async function MovieCast({ id }) {
       <h1 className="text-white text-xl font-bold my-4">Cast</h1>
       <div
         id="scroll"
-        className="flex items-center overflow-x-auto shadow-inner p-4  space-x-10"
+        className="flex items-start  bg-white/20 overflow-x-auto rounded-md p-4"
       >
         {credits.cast.map((actor) => (
-          <div width={50} height={50} key={actor.id}>
+          <div
+            className="w-auto px-2 mx-4 flex flex-col items-center"
+            key={actor.id}
+          >
             <Image
               src={`https://image.tmdb.org/t/p/original/${actor.profile_path}`}
               alt={actor.name}
-              width={100}
-              height={100}
-              className="w-16 h-16 rounded-full shadow-md "
+              width={150}
+              height={150}
+              className="w-20 h-20 rounded-full shadow-md "
             />
-            <p className="text-white text-sm text-center w-16">{actor.name}</p>
+            <p className="text-white text-sm text-center w-20">{actor.name}</p>
             <hr className="my-1" />
-            <p className="text-gray-300  text-xs text-center w-16">
+            <p className="text-gray-300  text-xs text-center w-20">
               {actor.character}
             </p>
           </div>
