@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../components/Movie/MovieCard";
-import getTopRatedMovies, { getTopRatedTvShows } from "../api/getTopRated";
+import getTopRatedMovies, { getTopRatedTvShows } from "../lib/getTopRated";
 import TvShowCard from "../components/TvShow/TvShowCard";
 
 export async function generateMetadata() {

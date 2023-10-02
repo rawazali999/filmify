@@ -6,8 +6,8 @@ export default async function getNowPlayingMovies() {
     url: "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1",
     headers: {
       accept: "application/json",
-      Authorization:
-      process.env.API_KEY,    },
+      Authorization: `Bearer ${process.env.API_KEY}`,
+    },
   };
 
   try {

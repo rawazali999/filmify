@@ -1,6 +1,6 @@
 import React from "react";
 import TvShowCard from "./TvShowCard";
-import { getSimilarTvShows } from "../../api/getById";
+import { getSimilarTvShows } from "../../lib/getById";
 
 export default async function SimilarTvShows({ id }) {
   const SimilarTvShows = await getSimilarTvShows(id);

@@ -1,9 +1,9 @@
 import React from "react";
-import getMovieById from "../../api/getById";
+import getMovieById from "../../lib/getById";
 // import getPopularMovies from "../../api/getPopular";
 import Image from "next/image";
 import NotFound from "../../not-found";
-import { getMovieTrailer } from "../../api/getById";
+import { getMovieTrailer } from "../../lib/getById";
 import MovieCast from "../../components/Movie/MovieCast";
 import Images from "../../components/Images";
 import SimilarMovies from "../../components/Movie/SimilarMovies";

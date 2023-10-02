@@ -1,16 +1,13 @@
 import React from "react";
 import Image from "next/image";
-import { getMovieCast } from "../../api/getById";
+import { getMovieCast } from "../../lib/getById";
 
 export default async function MovieCast({ id }) {
   const credits = await getMovieCast(id);
   return (
     <div className="w-full">
       <h1 className="text-white text-xl font-bold my-4">Cast</h1>
-      <div
-        id="scroll"
-        className="flex items-start  bg-white/20 overflow-x-auto rounded-md p-4"
-      >
+      <div className="flex items-start  bg-white/20 overflow-x-auto rounded-md p-4">
         {credits.cast.map((actor) => (
           <div
             className="w-auto px-2 mx-4 flex flex-col items-center"

@@ -5,7 +5,7 @@ export default async function getTrendingMovies() {
     url: "https://api.themoviedb.org/3/trending/all/day?language=en-US",
     headers: {
       accept: "application/json",
-      Authorization: process.env.API_KEY,
+      Authorization: `Bearer ${process.env.API_KEY}`,
     },
   };
 
@@ -26,7 +26,7 @@ export async function getTrendingTvShows() {
     url: "https://api.themoviedb.org/3/trending/tv/day?language=en-US",
     headers: {
       accept: "application/json",
-      Authorization: process.env.API_KEY,
+      Authorization: `Bearer ${process.env.API_KEY}`,
     },
   };
 

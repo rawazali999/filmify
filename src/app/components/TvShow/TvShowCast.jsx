@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { getTvShowCast } from "../../api/getById";
+import { getTvShowCast } from "../../lib/getById";
 
 export async function TvShowCast({ id }) {
   const credits = await getTvShowCast(id);

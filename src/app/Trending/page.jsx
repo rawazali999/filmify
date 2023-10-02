@@ -1,5 +1,5 @@
 import React from "react";
-import getTrendingMovies, { getTrendingTvShows } from "../api/getTrending";
+import getTrendingMovies, { getTrendingTvShows } from "../lib/getTrending";
 import TvShowCard from "../components/TvShow/TvShowCard";
 import MovieCard from "../components/Movie/MovieCard";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import MovieCard from "./MovieCard";
-import getPopularMovies from "../../api/getPopular";
+import getPopularMovies from "../../lib/getPopular";
 
 export default async function PopularMovies() {
   const movies = await getPopularMovies();

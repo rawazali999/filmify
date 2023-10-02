@@ -1,5 +1,5 @@
 import React from "react";
-import { getSimilarMovies } from "../../api/getById";
+import { getSimilarMovies } from "../../lib/getById";
 import MovieCard from "./MovieCard";
 
 export default async function SimilarMovies({ id }) {

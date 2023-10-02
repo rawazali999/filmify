@@ -1,12 +1,12 @@
-export default async function getTopRatedMovies() {
+export default async function getPopularMovies() {
   const axios = require("axios");
 
   const options = {
     method: "GET",
-    url: "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
+    url: "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
     headers: {
       accept: "application/json",
-      Authorization: process.env.API_KEY,
+      Authorization: `Bearer ${process.env.API_KEY}`,
     },
   };
 
@@ -19,15 +19,15 @@ export default async function getTopRatedMovies() {
   }
 }
 
-export async function getTopRatedTvShows() {
+export async function getPopularTvShows() {
   const axios = require("axios");
 
   const options = {
     method: "GET",
-    url: "https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1",
+    url: "https://api.themoviedb.org/3/tv/popular?language=en-US&page=1",
     headers: {
       accept: "application/json",
-      Authorization: process.env.API_KEY,
+      Authorization: `Bearer ${process.env.API_KEY}`,
     },
   };
 

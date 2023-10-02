@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { getTvShowById, getTvShowTrailer } from "../../api/getById";
+import { getTvShowById, getTvShowTrailer } from "../../lib/getById";
 import { TvShowCast } from "../../components/TvShow/TvShowCast";
 import Images from "../../components/Images";
 import SimilarTvShows from "../../components/TvShow/SimilarTvShows";
